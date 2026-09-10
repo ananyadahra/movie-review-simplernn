@@ -4,7 +4,11 @@ from keras.datasets import imdb
 from keras.preprocessing import sequence
 from keras.models import load_model
 
-word_index = imdb.get_word_index()
+import json
+
+with open("word_index.json", "r") as f:
+    word_index = json.load(f)
+
 reversed_word_index = {value: key for (key, value) in word_index.items()}
 
 
